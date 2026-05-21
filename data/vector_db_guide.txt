@@ -1,0 +1,78 @@
+Vector Databases and Semantic Search
+
+Introduction to Vector Embeddings
+
+Vector embeddings transform text, images, and other data into numerical representations in high-dimensional space. These embeddings capture semantic meaning, allowing systems to find similar content based on meaning rather than keyword matching.
+
+Key Properties of Embeddings:
+- Dimensionality: typically 384-2048 dimensions
+- Similarity: measured using cosine similarity or L2 distance
+- Composability: semantic operations can be performed on embeddings
+- Language-agnostic: capture universal semantic relationships
+
+FAISS: Facebook AI Similarity Search
+
+FAISS is an open-source library for efficient similarity search and clustering of dense vectors. It provides:
+- IndexFlat: exhaustive search (accurate, slower)
+- IndexIVF: inverted file index (faster, scalable)
+- IndexHNSW: hierarchical navigable small world (best performance)
+- Quantization: reduce memory usage with minimal accuracy loss
+
+Implementation Benefits:
+- Handles millions of vectors efficiently
+- Supports GPU acceleration
+- Provides approximate nearest neighbor search
+- Scale to billions of vectors with proper indexing
+
+SentenceTransformers for Semantic Understanding
+
+SentenceTransformers is a framework for computing sentence embeddings using transformer models. Key features:
+
+Pre-trained Models:
+- all-MiniLM-L6-v2: lightweight, 384 dimensions, fast inference
+- all-mpnet-base-v2: larger, 768 dimensions, better accuracy
+- all-roberta-large-v1: high quality embeddings
+- Domain-specific models: code, legal, medical documents
+
+Advantages:
+- Semantically meaningful embeddings
+- Transfer learning from large pre-trained models
+- Fast GPU inference
+- Works in 95+ languages
+
+Building Semantic Search Systems
+
+A complete semantic search pipeline:
+
+1. Document Preprocessing
+   - Clean and normalize text
+   - Remove irrelevant content
+   - Handle special formats (PDFs, tables)
+
+2. Chunking Strategy
+   - Fixed-size chunks: simple, consistent
+   - Sentence-based: respects semantic boundaries
+   - Sliding windows: capture overlapping context
+   - Hierarchical: multi-level organization
+
+3. Embedding Generation
+   - Batch processing for efficiency
+   - Normalize vectors for consistency
+   - Store embeddings with metadata
+
+4. Indexing and Search
+   - Build efficient index structure
+   - Implement similarity-based ranking
+   - Handle relevance threshold filtering
+
+5. Retrieval Quality
+   - Optimize chunk size and overlap
+   - Tune similarity thresholds
+   - Measure precision and recall
+   - Evaluate against golden dataset
+
+Advanced Techniques
+
+Hybrid Search combines keyword matching (BM25) with semantic search for better coverage. Re-ranking uses cross-encoders to improve result relevance. Query expansion generates multiple related queries to improve recall.
+
+Evaluation of Semantic Search Systems requires metrics like Mean Reciprocal Rank (MRR), Normalized Discounted Cumulative Gain (NDCG), and Precision@K.

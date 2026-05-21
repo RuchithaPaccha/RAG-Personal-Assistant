@@ -1,4 +1,3 @@
-# Personal Knowledge Assistant - RAG System
 
 A lightweight RAG (Retrieval-Augmented Generation) system that ingests PDFs, text files, and documents, then provides intelligent Q&A and summarization grounded in your personal knowledge base.
 
@@ -147,6 +146,83 @@ print(f"Retrieved {len(result['retrieved_chunks'])} chunks")
 summary = rag.summarize_document("./data/paper.pdf")
 print(f"Summary: {summary}")
 ```
+
+## Web Interface (Streamlit)
+
+### 🚀 Launch the Web App
+
+The easiest way to use RAG Assistant is through the Streamlit web interface:
+
+```bash
+# Install Streamlit dependencies
+pip install -r requirements.txt
+
+# Run the app
+streamlit run app.py
+```
+
+The app will open automatically at `http://localhost:8501`
+
+### ✨ Web Interface Features
+
+**Document Management:**
+- 📤 Upload PDF, TXT, and DOCX files
+- 🔍 Automatic document indexing with progress tracking
+- 🗂️ Multiple file support in one batch
+
+**Chat Interface:**
+- 💬 Natural language Q&A with your documents
+- 📖 View source chunks for every answer
+- 🔗 Track which parts of documents are being used
+
+**Chat History:**
+- 💾 Automatic chat saving and recovery
+- 🔄 Switch between multiple conversations
+- 🗑️ Clear individual chats or start fresh
+
+**Advanced Features:**
+- ⚡ Vector search with similarity thresholds
+- 🎯 Configurable retrieval parameters
+- 📊 Real-time statistics and system status
+
+### Use the Web App
+
+1. **Upload Documents** (Sidebar → Upload documents)
+   - Click "Browse files" and select PDF/TXT/DOCX
+   - Select multiple files at once
+   - Click "Index Documents" to build the knowledge base
+
+2. **Ask Questions** (Main chat area)
+   - Type your question
+   - Press Send to get an answer
+   - Click "Sources" to see relevant document chunks
+
+3. **Manage Chats** (Sidebar → Chat History)
+   - Create new chats for different topics
+   - Load previous conversations
+   - Save important chats
+
+### Configuration
+
+Edit `config/config.json` to customize the web app:
+
+```json
+{
+  "embedding": {
+    "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+    "batch_size": 32
+  },
+  "retrieval": {
+    "top_k": 5,
+    "similarity_threshold": 0.5
+  }
+}
+```
+
+**Recommended Settings:**
+- **top_k**: 3-5 for balanced context and speed
+- **similarity_threshold**: 0.5 for high precision
+- **chunk_size**: 512 for general documents
 
 ## Configuration
 

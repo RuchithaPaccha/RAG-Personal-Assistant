@@ -1,0 +1,5 @@
+"""Requirements for Streamlit web interface."""
+# Add these to requirements.txt
+
+streamlit>=1.28.0
+streamlit-chat>=0.0.1
