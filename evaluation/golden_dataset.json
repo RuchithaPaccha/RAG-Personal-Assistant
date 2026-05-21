@@ -1,0 +1,25 @@
+[
+  {
+    "query": "What are the main findings of the paper?",
+    "expected_answer": "[Expected summary of main findings]",
+    "relevant_chunks": [
+      "[Relevant chunk 1]",
+      "[Relevant chunk 2]"
+    ]
+  },
+  {
+    "query": "What methodology was used?",
+    "expected_answer": "[Expected methodology description]",
+    "relevant_chunks": [
+      "[Relevant methodology chunk 1]",
+      "[Relevant methodology chunk 2]"
+    ]
+  },
+  {
+    "query": "What are the limitations?",
+    "expected_answer": "[Expected limitations summary]",
+    "relevant_chunks": [
+      "[Relevant limitations chunk 1]"
+    ]
+  }
+]

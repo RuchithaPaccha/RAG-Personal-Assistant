@@ -1,0 +1,26 @@
+{
+  "embedding": {
+    "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+    "device": "cpu",
+    "batch_size": 32,
+    "dimension": 384
+  },
+  "chunking": {
+    "chunk_size": 512,
+    "chunk_overlap": 50,
+    "separators": ["\n\n", "\n", " ", ""]
+  },
+  "retrieval": {
+    "top_k": 5,
+    "similarity_threshold": 0.5
+  },
+  "llm": {
+    "model_name": "mistralai/Mistral-7B",
+    "max_tokens": 512,
+    "temperature": 0.7,
+    "device": "cpu"
+  },
+  "data_dir": "./data",
+  "index_path": "./faiss_index/index.faiss",
+  "metadata_path": "./faiss_index/metadata.json"
+}
