@@ -349,3 +349,7 @@ MIT License - feel free to use for personal or commercial projects.
 - FAISS for efficient similarity search
 - Hugging Face for open-source models
 - LangChain community for RAG patterns
+
+ ## Output interface look like this
+ <img width="1489" height="969" alt="image" src="https://github.com/user-attachments/assets/7062d78b-6b97-45d7-834b-1c731152280d" />
+
